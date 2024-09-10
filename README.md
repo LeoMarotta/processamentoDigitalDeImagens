@@ -17,13 +17,35 @@ Abra o terminal e execute:
 ```bash
 sudo apt install octave
 ```
+
 #### No Linux (Fedora)
 Abra o terminal e execute:
 ```bash
 sudo dnf install octave
 ```
 
-#### No Windows 
-Acesse o site oficial do Octave: [https://www.gnu.org/software/octave/download](https://octave.org/download.html#ms-windows)
-Baixe o instalador para Windows.
-Siga as instruções do assistente de instalação.
+#### No Windows
+1. Acesse o site oficial do Octave: [https://www.gnu.org/software/octave/download](https://octave.org/download.html#ms-windows)
+2. Baixe o instalador para Windows.
+3. Siga as instruções do assistente de instalação.
+
+## Como Executar os Exercícios
+
+Para executar os scripts dos exercícios, siga os seguintes passos: Clone este repositório, navegue até a pasta da semana desejada, execute o script no Octave.
+
+```bash
+git clone https://github.com/LeoMarotta/processamentoDigitalDeImagens.git
+cd processamentoDigitalDeImagens/SemanaX
+octave nome_do_script.m
+```
+
+Algumas funções podem demandar carregamento de pacotes que podem ser feitos através de:
+
+```bash
+pkg load seuPacoteAqui
+```
+
+
+
+
+   
