@@ -1,19 +1,22 @@
 function Entropia(imagem)
 imagem = imread(imagem);
 
-%Criando o histograma
-[hist, bins] = hist(img(:), 0:255);
+% Calcular o histograma da imagem (contagem de cada intensidade de cinza)
+histograma = imhist(imagem);
 
-%Normalizar o histograma para obter a probabilidade de cada nível de cinza
-total_pixels = numel(img);
-probabilities = hist / total_pixels;
+[altura, largura] = size(imagem);
+num_pixels = altura * largura;
 
-%Adicionar uma pequena constante para evitar log(0)
-epsilon = 1e-10;
-probabilities = probabilities + epsilon;
+probabilidades = histograma / num_pixels;
 
 %Calculando a entropia
-entropia = -sum(probabilities .* log2(probabilities));
+entropia = 0;
+for i = 1:length(probabilidades)
+  p = probabilidades(i);
+  if p > 0
+    entropia -= p * log2(p);
+  endif
+endfor
 
 %Exibindo valor
 printf("Entropia: %f\n", entropia);

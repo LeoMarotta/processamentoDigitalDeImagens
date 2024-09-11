@@ -2,12 +2,12 @@ function PSNR_MSE(imagem1, imagem2)
 imagem1 = imread(imagem1);
 imagem2 = imread(imagem2);
 
-%VerificaNDO se as imagens têm a mesma resolução
+%Verificando se as imagens têm a mesma resolução
   if size(imagem1) != size(imagem2)
     return;
   endif
 
-[altura, largura] = size(imagem1);
+[altura, largura] = size(imagem);
 mse = 0;
 
 %Calculando o MSE
